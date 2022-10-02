@@ -15,6 +15,11 @@ TagManager:
   - 
   - 
   - 
+  - Player
+  - 
+  - 
+  - 
+  - Environment
   - 
   - 
   - 
@@ -27,12 +32,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Floor
   - 
   - 
   - 
@@ -43,4 +43,10 @@ TagManager:
     locked: 0
   - name: Floor
     uniqueID: 413044491
+    locked: 0
+  - name: Walls
+    uniqueID: 714465891
+    locked: 0
+  - name: Player
+    uniqueID: 92292839
     locked: 0
