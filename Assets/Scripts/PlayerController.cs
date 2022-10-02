@@ -7,7 +7,8 @@ using UnityEngine.InputSystem.XR;
 public class PlayerController : MonoBehaviour
 {
     private TopDownControls playerInput;
-    private CharacterController characterController;
+    //private CharacterController characterController;
+    private Rigidbody2D characterRigidbody;
 
     private Vector2 inputMove;
     private Vector2 playerVelocity = Vector2.zero;
@@ -34,11 +35,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        //characterController = GetComponent<CharacterController>();
+        characterRigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         if (inputMove != Vector2.zero)
@@ -50,7 +52,8 @@ public class PlayerController : MonoBehaviour
             playerVelocity = Vector2.zero;
         }
 
-        characterController.Move(playerVelocity);
+        //characterController.Move(playerVelocity);
+        characterRigidbody.velocity = playerVelocity;
 
     }
 }
