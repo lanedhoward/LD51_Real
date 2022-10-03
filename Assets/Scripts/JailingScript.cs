@@ -36,7 +36,7 @@ public class JailingScript : MonoBehaviour
                 {
                     playerCollider.enabled = false;
                     player.enabled =false;
-                    player.transform.position = Vector3.MoveTowards(player.transform.position, waypoints[1].position, speed);
+                    player.transform.position = Vector3.MoveTowards(player.transform.position, waypoints[1].position, speed*Time.deltaTime);
                 }
             }
             

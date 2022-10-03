@@ -1460,7 +1460,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 615107121}
   - {fileID: 676150578}
-  speed: 1
+  speed: 4
 --- !u!4 &750894239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7401390562169896967, guid: fe87cdabc719fac4e8cee38c6ed1ed05, type: 3}
