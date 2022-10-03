@@ -448,8 +448,16 @@ PrefabInstance:
       value: You enter the code and open the safe... Inside is a bigger gun!
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: failureInteractions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: resultingInteractions.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: failureInteractions.Array.data[0]
+      value: hasTriedToOpen
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: requiredInteractions.Array.data[0]
@@ -735,6 +743,7 @@ MonoBehaviour:
   - Police
   - Office
   testing: 1
+  interactionsToReset: []
 --- !u!4 &297172460
 Transform:
   m_ObjectHideFlags: 0
@@ -1191,10 +1200,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476177593}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.91, y: -1.09, z: -1.6548936}
+  m_LocalPosition: {x: 5.61, y: 2.66, z: -1.6548936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 951266652}
   m_Father: {fileID: 2135228993}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1325,6 +1335,84 @@ Transform:
   m_Father: {fileID: 1006553022}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &630404180
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 476177594}
+    m_Modifications:
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: failMessage
+      value: Man, I hate my boss the detective. I'll tell you his secret for some
+        cash...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: successMessage
+      value: Epic Moneyz! Ok, here's the code to the safe in the office...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: requiredInteractions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: requiredInteractions.Array.data[0]
+      value: hasMoney
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: resultingInteractions.Array.data[0]
+      value: hasCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664042, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: m_Name
+      value: InteractableComponent
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
 --- !u!1001 &679283994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1524,6 +1612,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6588650334179799782, guid: 3aa25af387530c342b48f669f59fffb4, type: 3}
   m_PrefabInstance: {fileID: 1567744562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &951266652 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+  m_PrefabInstance: {fileID: 630404180}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1003302061
 GameObject:

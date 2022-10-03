@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     private TopDownControls playerInput;
     private Rigidbody2D characterRigidbody;
-    private InteractionsInventory interactionsInventory;
+    public InteractionsInventory interactionsInventory;
 
     private DialogueManager dialogueManager;
 
