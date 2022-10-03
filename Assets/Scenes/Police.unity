@@ -1595,6 +1595,7 @@ MonoBehaviour:
   - Bank
   - Police
   - Office
+  testing: 1
 --- !u!4 &1403612813
 Transform:
   m_ObjectHideFlags: 0
