@@ -1,0 +1,12 @@
+things the player needs for the full sequence
+
+-Bank: take robbers gun - "tookRobbersGun"
+-Police: Talk to npc with gun, get thrown in jail - "jailed"
+-Office: Discover safe (can't open yet) - "discoveredSafe"
+-Bank: take money and leave vault - "hasMoney"
+-Police: nothing
+-Office: use money to bribe npc for code to safe - "hasCode"
+-Bank: take robbers gun again - "tookRobbersGun"
+-Police: get thrown in jail again - "jailed"
+-Office: use code to open safe, get bigger gun - "hasBiggerGun"
+-Bank: Use bigger gun to threaten robber, robber leaves you win - "won"

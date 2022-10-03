@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - TextBubble
   - Player
   - 
   - 
@@ -55,4 +55,10 @@ TagManager:
     locked: 0
   - name: Props
     uniqueID: 2731018113
+    locked: 0
+  - name: Textbubbles
+    uniqueID: 534254433
+    locked: 0
+  - name: Text
+    uniqueID: 2617125167
     locked: 0

@@ -57,7 +57,17 @@ public class InteractionsInventory : MonoBehaviour
         {
             foreach (string s in obj.requiredInteractions)
             {
-                if (!CheckForFlag(s)) return false; //if missing any of the required flags,
+                if (!CheckForFlag(s))
+                {
+                    if (obj.failureInteractions.Length > 0)
+                    {
+                        foreach (string j in obj.failureInteractions)
+                        {
+                            SetFlag(j, true);
+                        }
+                    }
+                    return false; //if missing any of the required flags,
+                }
             }
         }
 

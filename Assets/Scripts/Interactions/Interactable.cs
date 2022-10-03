@@ -12,6 +12,8 @@ public class Interactable : MonoBehaviour
 
     public String[] resultingInteractions;
 
+    public String[] failureInteractions;
+
     public string successMessage;
     public string failMessage;
 
