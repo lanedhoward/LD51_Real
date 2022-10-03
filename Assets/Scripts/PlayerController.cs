@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D characterRigidbody;
     public InteractionsInventory interactionsInventory;
 
-
+    private SpriteRenderer gun;
+    private SpriteRenderer biggerGun;
     private Vector2 inputMove;
     private Vector2 playerVelocity = Vector2.zero;
 
@@ -54,6 +55,8 @@ public class PlayerController : MonoBehaviour
         //characterController = GetComponent<CharacterController>();
         characterRigidbody = GetComponent<Rigidbody2D>();
         interactionsInventory = GetComponent<InteractionsInventory>();
+        gun = GameObject.Find("Gun").GetComponent<SpriteRenderer>();
+        biggerGun = GameObject.Find("BiggerGun").GetComponent<SpriteRenderer>();
 
         DontDestroyOnLoad(this.gameObject);
         if (instance == null)
@@ -85,6 +88,27 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        bool check;
+        if(interactionsInventory.inventory.TryGetValue("tookRobbersGun", out check) && check == true)
+        {
+            gun.enabled = true;
+        }
+        else if(interactionsInventory.inventory.TryGetValue("tookRobbersGun", out check) && check == false)
+        {
+            gun.enabled = false;
+        }
+        else if(interactionsInventory.inventory.TryGetValue("hasBiggerGun", out check) && check == true)
+        {
+            biggerGun.enabled = true;
+        }
+        else if(interactionsInventory.inventory.TryGetValue("hasBiggerGun", out check) && check == false)
+        {
+            biggerGun.enabled = false;
+        }
+    }
+
 
     private void PressInteract()
     {
@@ -93,6 +117,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
+        
     }
 }

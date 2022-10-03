@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JailingScript : MonoBehaviour
 {
-    [SerializeField] PlayerController player;
+    private PlayerController player;
     [SerializeField] Transform[] waypoints;
     [SerializeField] float speed;
     private CapsuleCollider2D playerCollider;
@@ -13,7 +13,9 @@ public class JailingScript : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
         playerCollider = player.GetComponent<CapsuleCollider2D>();
+        waypoints[0] = player.transform;
     }
     void Update()
     {
@@ -35,7 +37,7 @@ public class JailingScript : MonoBehaviour
     }
     void CheckPosition()
     {
-        if(transform.position == waypoints[currentWaypoint].position)
+        if(this.transform.position == waypoints[currentWaypoint].position)
         {
             currentWaypoint++;
         }
