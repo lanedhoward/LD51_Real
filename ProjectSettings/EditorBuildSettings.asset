@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Tetris/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: ff6315213d9e41a41a970d157c899dd5
+  - enabled: 1
     path: Assets/Scenes/Bank.unity
     guid: ef4344b9c95599f42816702e36b81d67
   - enabled: 1
@@ -18,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Office.unity
     guid: a39a2a9ed0d44494a9909c02d118e5e9
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
-    guid: ff6315213d9e41a41a970d157c899dd5
+    path: Assets/Scenes/WinScreen.unity
+    guid: cf7e0d993938bc8459a0ded742adaf99
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3bee058c26da45c4eb5847bc65a4a1de, type: 2}

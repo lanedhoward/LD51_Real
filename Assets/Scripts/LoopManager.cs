@@ -17,9 +17,9 @@ public class LoopManager : MonoBehaviour
         //Debug.Log(SceneManager.sceneCountInBuildSettings);
 
         sceneNumber = SceneManager.GetActiveScene().buildIndex + 1;
-        if(sceneNumber == 3)
+        if(sceneNumber == 4)
         {
-            sceneNumber = 0;
+            sceneNumber = 1;
         }
         if(!testing)
         {
@@ -32,7 +32,6 @@ public class LoopManager : MonoBehaviour
     IEnumerator Wait(float seconds, int i)
     {
         yield return new WaitForSeconds(seconds);
-        Debug.Log("done");
         SceneManager.LoadScene(scenes[i]);
     }
 }

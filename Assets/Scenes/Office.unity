@@ -850,6 +850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loopTime: 10
   scenes:
+  - TitleScreen
   - Bank
   - Police
   - Office
