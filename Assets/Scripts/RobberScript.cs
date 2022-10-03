@@ -43,5 +43,9 @@ public class RobberScript : MonoBehaviour
             //gun.enabled = false;
             speechBubble.GetComponentInChildren<TextMeshPro>().text = "Ah thats a big gun! Im done robbing";
         }
+        if (player.interactionsInventory.CheckForFlag("threatenedRobber"))
+        {
+            speechBubble.GetComponentInChildren<TextMeshPro>().text = "Uhh i guess I will just make a deposit";
+        }
     }
 }

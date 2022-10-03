@@ -110,15 +110,21 @@ public class PlayerController : MonoBehaviour
         {
             gun.enabled = false;
         }
-        if(interactionsInventory.inventory.TryGetValue("hasBiggerGun", out check) && check == true)
+        if((interactionsInventory.inventory.TryGetValue("hasBiggerGun", out check) && check == true))
         {
             gun.enabled = false;
             biggerGun.enabled = true;
         }
-        else if(interactionsInventory.inventory.TryGetValue("hasBiggerGun", out check) && check == false)
+        else if((interactionsInventory.inventory.TryGetValue("hasBiggerGun", out check) && check == false ))
         {
             biggerGun.enabled = false;
         }
+
+        if (interactionsInventory.CheckForFlag("gaveBiggerGun"))
+        {
+            biggerGun.enabled = false;
+        }
+        
     }
 
 

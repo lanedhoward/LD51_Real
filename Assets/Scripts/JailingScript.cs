@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class JailingScript : MonoBehaviour
@@ -10,6 +11,7 @@ public class JailingScript : MonoBehaviour
     private CapsuleCollider2D playerCollider;
     private int currentWaypoint = 0;
     private bool timeToMovePlayer;
+    private bool finished = false;
 
     void Start()
     {
@@ -19,6 +21,10 @@ public class JailingScript : MonoBehaviour
     }
     void Update()
     {
+        if (currentWaypoint > waypoints.Length-1)
+        {
+            currentWaypoint = waypoints.Length - 1;
+        }
         bool check;
         if(player.interactionsInventory.inventory.TryGetValue("jailed", out check) && check == true)
         {
@@ -35,23 +41,28 @@ public class JailingScript : MonoBehaviour
             }
             
         }
+        
     }
     void CheckPosition()
     {
         if(this.transform.position == waypoints[currentWaypoint].position)
         {
-            currentWaypoint++;
+            if (currentWaypoint < waypoints.Length-1)
+            {
+                currentWaypoint++;
+            }
         }
         if(transform.position == player.transform.position)
         {
             timeToMovePlayer = true;
         }
-        if(player.transform.position == waypoints[1].position)
+        if (player.transform.position == waypoints[1].position && finished == false)
         {
             player.enabled = true;
             playerCollider.enabled = true;
             timeToMovePlayer = false;
-            Debug.Log("proof");
+            finished = true;
+            //Debug.Log("proof");
         }
     }
 }
