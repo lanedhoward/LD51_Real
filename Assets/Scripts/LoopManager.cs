@@ -17,7 +17,7 @@ public class LoopManager : MonoBehaviour
         //Debug.Log(SceneManager.sceneCountInBuildSettings);
 
         sceneNumber = SceneManager.GetActiveScene().buildIndex + 1;
-        if(sceneNumber == SceneManager.sceneCountInBuildSettings)
+        if(sceneNumber == 3)
         {
             sceneNumber = 0;
         }

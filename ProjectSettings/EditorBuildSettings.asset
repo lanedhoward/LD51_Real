@@ -17,4 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Office.unity
     guid: a39a2a9ed0d44494a9909c02d118e5e9
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: ff6315213d9e41a41a970d157c899dd5
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 3bee058c26da45c4eb5847bc65a4a1de, type: 2}
