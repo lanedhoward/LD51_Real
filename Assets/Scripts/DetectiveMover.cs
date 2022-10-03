@@ -13,7 +13,7 @@ public class DetectiveMover : MonoBehaviour
         if(currentWaypoint < waypoints.Length)
         {
             CheckPosition();
-            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, speed * Time.deltaTime);
         }
         
     }
