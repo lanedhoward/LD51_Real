@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RobberScript : MonoBehaviour
@@ -34,6 +35,13 @@ public class RobberScript : MonoBehaviour
         if(player.interactionsInventory.inventory.TryGetValue("tookRobbersGun", out check) && check == true)
         {
             gun.enabled = false;
+            speechBubble.GetComponentInChildren<TextMeshPro>().text = "Give me all the money! I have a secret second gun.";
+        }
+        bool check2;
+        if (player.interactionsInventory.inventory.TryGetValue("gaveBiggerGun", out check2) && check2 == true)
+        {
+            //gun.enabled = false;
+            speechBubble.GetComponentInChildren<TextMeshPro>().text = "Ah thats a big gun! Im done robbing";
         }
     }
 }

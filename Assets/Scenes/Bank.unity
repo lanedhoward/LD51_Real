@@ -1069,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: resultingInteractions.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: requiredInteractions.Array.data[0]
@@ -1077,7 +1077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: resultingInteractions.Array.data[0]
-      value: 
+      value: gaveBiggerGun
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: m_RootOrder
