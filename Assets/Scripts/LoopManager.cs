@@ -7,6 +7,7 @@ public class LoopManager : MonoBehaviour
 {
     [SerializeField] float loopTime;
     [SerializeField] string[] scenes;
+    [SerializeField] bool testing;
     private int sceneNumber;
     void Start()
     {
@@ -18,7 +19,10 @@ public class LoopManager : MonoBehaviour
         {
             sceneNumber = 0;
         }
-        StartCoroutine(Wait(loopTime, sceneNumber));
+        if(!testing)
+        {
+            StartCoroutine(Wait(loopTime, sceneNumber));
+        }
     }
 
     IEnumerator Wait(float seconds, int i)

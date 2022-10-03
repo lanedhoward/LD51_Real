@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200609830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.23, y: 2.19, z: 0}
+  m_LocalPosition: {x: -12.23, y: 2.19, z: -0.18}
   m_LocalScale: {x: 4.6591516, y: 0.46029642, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -344,7 +344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268837589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.2, y: 5.44, z: 0}
+  m_LocalPosition: {x: -12.2, y: 5.44, z: -0.17}
   m_LocalScale: {x: 3.9341874, y: 0.32220748, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -566,7 +566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413301671}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -9.81, y: 4.2601, z: 0}
+  m_LocalPosition: {x: -9.81, y: 4.26, z: 0}
   m_LocalScale: {x: 4.5899873, y: 0.46029642, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1594,6 +1594,7 @@ MonoBehaviour:
   scenes:
   - Bank
   - Police
+  - Office
 --- !u!4 &1403612813
 Transform:
   m_ObjectHideFlags: 0
@@ -2273,7 +2274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923118135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.43}
   m_LocalScale: {x: 20.154484, y: 10.186357, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -408,6 +408,7 @@ MonoBehaviour:
   scenes:
   - Bank
   - Police
+  - Office
 --- !u!4 &297172460
 Transform:
   m_ObjectHideFlags: 0
