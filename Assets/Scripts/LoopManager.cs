@@ -9,6 +9,7 @@ public class LoopManager : MonoBehaviour
     [SerializeField] string[] scenes;
     [SerializeField] bool testing;
     private int sceneNumber;
+    bool loopRunning = false;
 
     public string[] interactionsToReset;
     void Start()
@@ -29,9 +30,19 @@ public class LoopManager : MonoBehaviour
 
     }
 
+    public void StopLoop()
+    {
+        if (loopRunning)
+        {
+            StopCoroutine(Wait(loopTime, sceneNumber));
+        }
+    }
+
     IEnumerator Wait(float seconds, int i)
     {
+        loopRunning = true;
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene(scenes[i]);
+        loopRunning = false;
     }
 }

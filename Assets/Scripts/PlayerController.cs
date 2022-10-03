@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private string startTime;
     private float currentTime;
 
+    private bool winner = false;
+
     private void OnEnable()
     {
         
@@ -124,6 +126,14 @@ public class PlayerController : MonoBehaviour
         {
             biggerGun.enabled = false;
         }
+
+        if (interactionsInventory.CheckForFlag("wonTheGame") && winner == false)
+        {
+            // winner !!
+            FindObjectOfType<LoopManager>().StopLoop();
+            StartCoroutine(Wait(10f));
+            winner = true;
+        }
         
     }
 
@@ -153,5 +163,13 @@ public class PlayerController : MonoBehaviour
         string display = startTime + ":" + currentSeconds; //string.Format("{0:D2}",  currentSeconds);
 
         hudTimer.text = display;
+    }
+
+    IEnumerator Wait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Debug.Log("done");
+        SceneManager.LoadScene("WinScreen");
+        Destroy(gameObject);
     }
 }
