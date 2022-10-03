@@ -11,6 +11,8 @@ public class LoopManager : MonoBehaviour
     private int sceneNumber;
     bool loopRunning = false;
 
+    Coroutine looper;
+
     public string[] interactionsToReset;
     void Start()
     {
@@ -24,7 +26,7 @@ public class LoopManager : MonoBehaviour
         }
         if(!testing)
         {
-            StartCoroutine(Wait(loopTime, sceneNumber));
+            looper = StartCoroutine(Wait(loopTime, sceneNumber));
         }
 
 
@@ -34,7 +36,7 @@ public class LoopManager : MonoBehaviour
     {
         if (loopRunning)
         {
-            StopCoroutine(Wait(loopTime, sceneNumber));
+            StopCoroutine(looper);
         }
     }
 
