@@ -542,7 +542,7 @@ MonoBehaviour:
   - {fileID: 730451536}
   - {fileID: 1343936271}
   - {fileID: 2013394265}
-  speed: 0.004
+  speed: 0.002
 --- !u!1001 &234024196
 PrefabInstance:
   m_ObjectHideFlags: 0

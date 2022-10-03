@@ -29,6 +29,7 @@ public class JailingScript : MonoBehaviour
                 if(timeToMovePlayer)
                 {
                     playerCollider.enabled = false;
+                    player.enabled =false;
                     player.transform.position = Vector3.MoveTowards(player.transform.position, waypoints[1].position, speed);
                 }
             }
@@ -45,10 +46,12 @@ public class JailingScript : MonoBehaviour
         {
             timeToMovePlayer = true;
         }
-        if(player.transform.position == waypoints[2].position)
+        if(player.transform.position == waypoints[1].position)
         {
+            player.enabled = true;
             playerCollider.enabled = true;
             timeToMovePlayer = false;
+            Debug.Log("proof");
         }
     }
 }

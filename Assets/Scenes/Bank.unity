@@ -563,8 +563,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: resultingInteractions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: resultingInteractions.Array.data[0]
       value: hasMoney
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: resultingInteractions.Array.data[1]
+      value: canOpenVault
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: m_RootOrder
@@ -670,6 +678,7 @@ MonoBehaviour:
   interactionsToReset:
   - tookRobbersGun
   - hasMoney
+  - canOpenVault
 --- !u!4 &297172460
 Transform:
   m_ObjectHideFlags: 0
@@ -1961,8 +1970,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: resultingInteractions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: resultingInteractions.Array.data[0]
       value: hasMoney
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: resultingInteractions.Array.data[1]
+      value: canOpenVault
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: m_RootOrder
@@ -2352,7 +2369,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.6058023}
+  m_Offset: {x: 0.14221561, y: 0.696303}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2363,8 +2380,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3728018, y: 1.1398005}
+  m_Size: {x: 1.657233, y: 1.320802}
   m_EdgeRadius: 0
+--- !u!114 &1895645369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895645366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9ab1e1d3f3e984fbaa1553f57bbb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyBoolName: canOpenVault
 --- !u!1 &1923118135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2457,16 +2487,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 235566051}
     m_Modifications:
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
-      propertyPath: successMessage
+      propertyPath: failMessage
       value: 'Robber: hey! you took my gun!'
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: successMessage
+      value: Woah mama! That's a big gun! I'm outta here
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: failureInteractions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: requiredInteractions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: resultingInteractions.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
-      propertyPath: resultingInteractions.Array.data[0]
+      propertyPath: failureInteractions.Array.data[0]
       value: tookRobbersGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: requiredInteractions.Array.data[0]
+      value: hasBiggerGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: resultingInteractions.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664037, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: m_RootOrder
@@ -2536,6 +2586,10 @@ PrefabInstance:
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: failMessage
       value: It's locked. Obviously.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
+      propertyPath: successMessage
+      value: '*Door opens epic style*'
       objectReference: {fileID: 0}
     - target: {fileID: 4082886828179664036, guid: e2e241724b6defa4caa1b81a7ba44c29, type: 3}
       propertyPath: requiredInteractions.Array.size
