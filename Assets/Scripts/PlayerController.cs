@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
@@ -21,6 +22,10 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 6f;
 
     private static GameObject instance;
+
+    private TMPro.TextMeshProUGUI hudTimer;
+    private string startTime;
+    private float currentTime;
 
     private void OnEnable()
     {
@@ -62,6 +67,8 @@ public class PlayerController : MonoBehaviour
         if (instance == null)
         {
             instance = gameObject;
+            startTime = System.DateTime.Now.ToString("HH:mm");
+            currentTime = 0;
         }
         else
         {
@@ -90,6 +97,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        currentTime += Time.deltaTime;
+        DisplayTime();
+
+
         bool check;
         if(interactionsInventory.inventory.TryGetValue("tookRobbersGun", out check) && check == true)
         {
@@ -118,6 +129,23 @@ public class PlayerController : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
+        var textsList = FindObjectsOfType<TMPro.TextMeshProUGUI>();
+        foreach (var i in textsList)
+        {
+            if (i.CompareTag("hudTimer"))
+            {
+                hudTimer = i;
+                break;
+            }
+        }
+        currentTime = 0;
+    }
+
+    private void DisplayTime()
+    {
+        string currentSeconds = Mathf.FloorToInt(currentTime).ToString().PadLeft(2, '0');
+        string display = startTime + ":" + currentSeconds; //string.Format("{0:D2}",  currentSeconds);
+
+        hudTimer.text = display;
     }
 }
