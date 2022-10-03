@@ -15,8 +15,6 @@ public class Interactable : MonoBehaviour
     public string successMessage;
     public string failMessage;
 
-    public GameObject dialogueBox;
-    public TextMeshProUGUI dialogueText;
 
     public bool playerInRange = false;
 

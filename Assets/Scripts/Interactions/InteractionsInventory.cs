@@ -9,9 +9,15 @@ public class InteractionsInventory : MonoBehaviour
 
     private Interactable interactable;
 
+    private DialogueManager dialogueManager;
+
     public void Awake()
     {
         inventory = new Dictionary<string, bool>();
+    }
+    private void Start()
+    {
+        dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     public bool CheckForFlag(string s)
@@ -80,16 +86,37 @@ public class InteractionsInventory : MonoBehaviour
 
     public void PressInteract()
     {
-        if (interactable != null)
+        if (!dialogueManager.IsDialogueActive())
         {
-            bool success = Interact(interactable);
+            if (interactable != null)
+            {
+                bool success = Interact(interactable);
 
-            Debug.Log("Interacted" + success);
+                string text;
+                if (success)
+                {
+                    text = interactable.successMessage;
+                }
+                else
+                {
+                    text = interactable.failMessage;
+                }
 
+
+                dialogueManager.DisplayText(text);
+
+                //Debug.Log("Interacted" + success);
+
+            }
+            else
+            {
+                dialogueManager.StopDisplay();
+                //Debug.Log("Interacted, null");
+            }
         }
         else
         {
-            Debug.Log("Interacted, null");
+            dialogueManager.StopDisplay();
         }
     }
 }

@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D characterRigidbody;
     private InteractionsInventory interactionsInventory;
 
+    private DialogueManager dialogueManager;
+
     private Vector2 inputMove;
     private Vector2 playerVelocity = Vector2.zero;
 
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour
         //characterController = GetComponent<CharacterController>();
         characterRigidbody = GetComponent<Rigidbody2D>();
         interactionsInventory = GetComponent<InteractionsInventory>();
+
+        dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     // Update is called once per frame
