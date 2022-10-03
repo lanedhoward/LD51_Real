@@ -16,10 +16,7 @@ public class InteractionsInventory : MonoBehaviour
     {
         inventory = new Dictionary<string, bool>();
     }
-    private void Start()
-    {
-        dialogueManager = FindObjectOfType<DialogueManager>();
-    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -140,6 +137,9 @@ public class InteractionsInventory : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        dialogueManager = FindObjectOfType<DialogueManager>();
+
+
         LoopManager loop = FindObjectOfType<LoopManager>();
         if (loop.interactionsToReset.Length > 0)
         {
