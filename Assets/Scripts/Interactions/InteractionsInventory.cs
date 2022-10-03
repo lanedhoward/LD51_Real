@@ -1,0 +1,95 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEngine;
+
+public class InteractionsInventory : MonoBehaviour
+{
+    public Dictionary<string, bool> inventory;
+
+    private Interactable interactable;
+
+    public void Awake()
+    {
+        inventory = new Dictionary<string, bool>();
+    }
+
+    public bool CheckForFlag(string s)
+    {
+        if (inventory.ContainsKey(s))
+        {
+            if (inventory[s] == true)
+            {
+                return true;
+            }
+            
+        }
+        else
+        {
+            // dont have the key yet, so add it. but we havent earned the truth yet.
+            inventory.Add(s, false);
+        }
+        
+        return false;
+    }
+
+    public void SetFlag(string s, bool b)
+    {
+        if (inventory.ContainsKey(s))
+        {
+            inventory[s] = b;
+        }
+        else
+        {
+            inventory.Add(s, b);
+        }
+    }
+
+    public bool Interact(Interactable obj)
+    {
+        if (obj.requiredInteractions.Length > 0)
+        {
+            foreach (string s in obj.requiredInteractions)
+            {
+                if (!CheckForFlag(s)) return false; //if missing any of the required flags,
+            }
+        }
+
+        //has all requirements, so set the results
+
+        if (obj.resultingInteractions.Length > 0)
+        {
+            foreach (string s in obj.resultingInteractions)
+            {
+                SetFlag(s, true);
+            }
+        }
+        return true;
+    }
+    
+
+    public void ReceiveInteractable(Interactable _interactable)
+    {
+        interactable = _interactable;
+    }
+
+    public void ClearInteractable()
+    {
+        interactable = null;
+    }
+
+    public void PressInteract()
+    {
+        if (interactable != null)
+        {
+            bool success = Interact(interactable);
+
+            Debug.Log("Interacted" + success);
+
+        }
+        else
+        {
+            Debug.Log("Interacted, null");
+        }
+    }
+}

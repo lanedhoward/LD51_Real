@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem.XR;
 
 public class PlayerController : MonoBehaviour
 {
     private TopDownControls playerInput;
-    //private CharacterController characterController;
     private Rigidbody2D characterRigidbody;
+    private InteractionsInventory interactionsInventory;
 
     private Vector2 inputMove;
     private Vector2 playerVelocity = Vector2.zero;
@@ -22,8 +24,12 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Move.performed += e => inputMove = e.ReadValue<Vector2>();
         playerInput.Player.Move.canceled += e => inputMove = Vector2.zero;
 
+        playerInput.Player.Interact.performed += e => PressInteract();
+
         playerInput.Player.Enable();
     }
+
+    
 
     private void OnDisable()
     {
@@ -37,6 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         //characterController = GetComponent<CharacterController>();
         characterRigidbody = GetComponent<Rigidbody2D>();
+        interactionsInventory = GetComponent<InteractionsInventory>();
     }
 
     // Update is called once per frame
@@ -55,5 +62,11 @@ public class PlayerController : MonoBehaviour
         //characterController.Move(playerVelocity);
         characterRigidbody.velocity = playerVelocity;
 
+    }
+
+
+    private void PressInteract()
+    {
+        interactionsInventory.PressInteract();
     }
 }
