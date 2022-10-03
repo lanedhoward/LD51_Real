@@ -9,6 +9,8 @@ public class LoopManager : MonoBehaviour
     [SerializeField] string[] scenes;
     [SerializeField] bool testing;
     private int sceneNumber;
+
+    public string[] interactionsToReset;
     void Start()
     {
         Debug.Log($"This scene is number {SceneManager.GetActiveScene().buildIndex}");
@@ -23,6 +25,8 @@ public class LoopManager : MonoBehaviour
         {
             StartCoroutine(Wait(loopTime, sceneNumber));
         }
+
+
     }
 
     IEnumerator Wait(float seconds, int i)

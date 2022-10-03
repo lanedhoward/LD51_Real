@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractionsInventory : MonoBehaviour
 {
@@ -19,7 +20,14 @@ public class InteractionsInventory : MonoBehaviour
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
     }
-
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     public bool CheckForFlag(string s)
     {
         if (inventory.ContainsKey(s))
@@ -127,6 +135,19 @@ public class InteractionsInventory : MonoBehaviour
         else
         {
             dialogueManager.StopDisplay();
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        LoopManager loop = FindObjectOfType<LoopManager>();
+        if (loop.interactionsToReset.Length > 0)
+        {
+            foreach(string s in loop.interactionsToReset)
+            {
+                SetFlag(s, false);
+
+            }
         }
     }
 }
